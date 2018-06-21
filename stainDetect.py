@@ -7,7 +7,6 @@ import urllib2
 import json
 
 
-
 def upload_sensor_data(str):
     data = {'data':{'data':{'washingmachine':{
         'dirt_detect': str
@@ -19,19 +18,6 @@ def upload_sensor_data(str):
     url = 'https://fy33dypvtg.execute-api.us-west-1.amazonaws.com/prod/v0/ctrl';
     req = urllib2.Request(url)
     req.add_header('Content-Type', 'application/json')
-
-def upload_sensor_data1(cap):
-    data = {'data':{'data':{'washingmachine':{
-        'dirt_detect': str(cap)
-    }}},
-    'eventName': 'washingmachine-hack'}
-
-    print data
-
-    url = 'https://fy33dypvtg.execute-api.us-west-1.amazonaws.com/prod/v0/ctrl';
-    req = urllib2.Request(url)
-    req.add_header('Content-Type', 'application/json')
-    response = urllib2.urlopen(req, json.dumps(data))
     
 def judge(mask):
     mean = mask.mean()
