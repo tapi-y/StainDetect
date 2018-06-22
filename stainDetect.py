@@ -11,7 +11,7 @@ def upload_sensor_data(str):
     data = {'data':{'data':{'washingmachine':{
         'dirt_detect': str
     }}},
-    'eventName': 'washingmachine-hack0'}
+    'eventName': 'washingmachine-hack'}
 
     print data
 
