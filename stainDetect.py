@@ -11,13 +11,14 @@ def upload_sensor_data(str):
     data = {'data':{'data':{'washingmachine':{
         'dirt_detect': str
     }}},
-    'eventName': 'washingmachine-hack'}
+    'eventName': 'washingmachine-hack0'}
 
     print data
 
     url = 'https://fy33dypvtg.execute-api.us-west-1.amazonaws.com/prod/v0/ctrl';
     req = urllib2.Request(url)
     req.add_header('Content-Type', 'application/json')
+    response = urllib2.urlopen(req, json.dumps(data))
     
 def judge(mask):
     mean = mask.mean()
